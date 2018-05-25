@@ -20,4 +20,5 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, function (session) {
     session.send("You said: %s", session.message.text);
     session.send("**HI THERE BOLDY**");
+    session.send("![Minion](https://octodex.github.com/images/minion.png)");
 });

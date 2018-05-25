@@ -10,6 +10,14 @@
             "appPassword": "",
             "endpoint": "http://localhost:3978/api/messages",
             "name": "http://localhost:3978/api/messages"
+        },
+        {
+            "appId": "",
+            "id": "75c17c30-5f5a-11e8-9cf0-9141febe07b6",
+            "type": "endpoint",
+            "appPassword": "",
+            "endpoint": "https://localteamsbot.azurewebsites.net/api/messages",
+            "name": "Public"
         }
     ]
 }
