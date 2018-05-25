@@ -18,7 +18,7 @@ server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, function (session) {
-    session.send("You said: %s", session.message.text);
-    session.send("**HI THERE BOLDY**");
+    // session.send("You said: %s", session.message.text);
+    // session.send("**HI THERE BOLDY**");
     session.send("![Minion](https://octodex.github.com/images/minion.png)");
 });
