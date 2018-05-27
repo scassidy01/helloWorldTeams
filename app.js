@@ -27,10 +27,10 @@ const dialog = new builder.IntentDialog();
 dialog.matches(/^hello/i, [
     function (session) {
         if (session.message.text.toLowerCase() === 'hello'){
-            builder.Prompts.text(session, "type `search` and the `users name` and I'll find who you are looking for");
+            session.send("type `search` and the `users name` and I'll find who you are looking for");
         }
     }
-    ]);
+    ]),
 
 dialog.matches(/^search/i, [
     function (session, args, next) {
