@@ -23,7 +23,15 @@ const bot = new builder.UniversalBot(connector)
 
 const dialog = new builder.IntentDialog();
 
-// User sends *Search* command and we respond with Asking the user who they are looking to search for
+// When user sends *hello* we respond with instructions on what the bot can do [strict match right now]
+dialog.matches(/^hello/i, [
+    function (session) {
+        if (session.message.text.toLowerCase() === 'hello'){
+            builder.Prompts.text(session, "type `search` and the `users name` and I'll find who you are looking for");
+        }
+    }
+    ]);
+
 dialog.matches(/^search/i, [
     function (session, args, next) {
         if (session.message.text.toLowerCase() === 'search'){
