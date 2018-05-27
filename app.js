@@ -41,7 +41,7 @@ dialog.matches(/^search/i, [
             session.endDialog('Request Cancelled');
         } else {
             githubClient.executeSearch(query, function (profiles) {
-                //get JSON data structure and provide some logic based on search term
+                //get JSON data structure and provide rudimentary filtering based on search term
                 var totalCount = profiles.total_count;
                 if (totalCount === 0) {
                     session.endDialog('Sorry, no results found.');
@@ -51,7 +51,7 @@ dialog.matches(/^search/i, [
                     // provide options for the user to pick from based on the returned results from the gitHub API
                     session.dialogData.property = null;
                     var username = profiles.items.map(function(item){ return item.login});
-                    builder.Prompts.choice(session,'What user do you want to load', username);
+                    builder.Prompts.choice(session,'Choose a user would you like to view.', username);
                 }
 
             });
